@@ -7,13 +7,10 @@ const logoSchema = new Schema({
         type: String,
     },
     name:{
-        type: String,
-        
+        type: String,       
     }
        
-
 }, { timestamps: true })
-
 
 
 const Logo = mongoose.model('Logo', logoSchema);
