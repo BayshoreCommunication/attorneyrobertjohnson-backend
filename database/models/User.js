@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 const userSchema = new Schema(
@@ -8,59 +8,63 @@ const userSchema = new Schema(
       trim: true,
     },
     password: {
-      type: String,
-      trim: true,
-    },
+        type: String,
+        trim: true,
+      },  
+
 
     name: {
       type: String,
     },
     color: {
-      type: String,
-    },
-    authToken: {
-      type: String,
-    },
+        type: String,
+      },
+      authToken: {
+        type: String,
+      },
     logo: { type: String },
-    apiKey: { type: String },
-    clientId: { type: String },
+    apiKey: { type: String },  
+    clientId: { type: String},
 
     canonical: { type: String },
     sitemap: { type: String },
-    robotTxt: { type: String },
+    robotTxt: { type: String},
 
     clientSecret: { type: String },
     blogs: [
       {
         type: mongoose.Schema.Types.ObjectId,
 
-        ref: 'Blog',
+        ref: "Blog",
       },
     ],
     categories: [
       {
         type: mongoose.Schema.Types.ObjectId,
 
-        ref: 'Category',
+        ref: "Category",
       },
     ],
     messages: [
       {
         type: mongoose.Schema.Types.ObjectId,
 
-        ref: 'Message',
+        ref: "Message",
       },
     ],
     medias: [
       {
         type: mongoose.Schema.Types.ObjectId,
 
-        ref: 'Media',
+        ref: "Media",
       },
     ],
+    
+
+ 
   },
   { timestamps: true },
 );
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 export default User;
